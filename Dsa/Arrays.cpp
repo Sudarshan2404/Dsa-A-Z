@@ -30,11 +30,60 @@ int main()
 
   if (sorted)
   {
-    cout << "Array is sorted";
+    cout << "Array is sorted" << endl;
   }
   else
   {
-    cout << "array is not sorted";
+    cout << "array is not sorted" << endl;
+  }
+
+  // Reverse an array
+
+  int a = 0;
+  int b = nums.size() - 1;
+
+  while (a < b)
+  {
+    swap(nums[a], nums[b]);
+    a++;
+    b--;
+  }
+
+  for (int i = 0; i < nums.size(); i++)
+  {
+    cout << nums[i] << ", ";
+  }
+  cout << endl;
+
+  // Check if ant two pairs gets the target
+
+  vector<int> sornum = {1, 5, 4, 8, 9};
+  int size = sornum.size();
+  int i = 0;
+  int j = size - 1;
+
+  int target = 87;
+  int found = false;
+  while (i < j)
+  {
+    while (i < j)
+    {
+      if (sornum[i] + sornum[j] == target)
+      {
+        found = true;
+        break;
+      }
+      j--;
+    }
+    i++;
+  }
+  if (!found)
+  {
+    cout << "false";
+  }
+  else
+  {
+    cout << "true";
   }
   return 0;
 }
